@@ -147,7 +147,7 @@ void ff_memfree (
 )
 {
 	//free(mblock);	/* Discard the memory block with POSIX API */
-	vPortFree(mblocks);
+	vPortFree(mblock);
 }
 
 #endif

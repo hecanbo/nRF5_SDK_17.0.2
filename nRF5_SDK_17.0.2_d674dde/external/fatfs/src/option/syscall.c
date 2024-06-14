@@ -62,8 +62,10 @@ int ff_del_syncobj (	/* 1:Function succeeded, 0:Could not delete due to any erro
 
 //	OSMutexDel(sobj, OS_DEL_ALWAYS, &err);	/* uC/OS-II */
 //	ret = (int)(err == OS_NO_ERR);
-
-    vSemaphoreDelete(sobj);		/* FreeRTOS */
+    if(sobj)
+	{
+        vSemaphoreDelete(sobj);		/* FreeRTOS */
+	}
 	ret = 1;
 
 	return ret;
